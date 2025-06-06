@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta para Renacuajito 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      padding: 50px;
+      color: #d6336c;
+    }
+
+    .btn-carta {
+      font-family: 'Pacifico', cursive;
+      margin-top: 50px;
+      padding: 15px 30px;
+      font-size: 20px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .carta {
+      display: none;
+      margin-top: 40px;
+      background: white;
+      color: #444;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .pregunta {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #d6336c;
+    }
+
+    .opciones {
+      margin-top: 20px;
+    }
+
+    .btn-opcion {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0 15px;
+    }
+
+    #btnSi {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #btnNo {
+      background-color: #dc3545;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💌 Para Isabel 💌</h1>
+
+  <button class="btn-carta" onclick="mostrarCarta()">Abrir carta 💖</button>
+
+  <div class="carta" id="carta">
+    <p>
+      Mi querida estupida, jajaja la verdad no se como empezar una carta para cumpleaños<br><br>
+      Quería escribirte algo especial por tu cumpleaños. Eres alguien increíble la verdad , cada cosa que me cuentas o me dices tiene
+      importancia para mi,  tu risa es bien graciosa y te quiero apesar de todo , gracias por dejarme ser parte de tu vida, aunque sea para molestarte y joderte nomas
+      <br><br>
+      Te quiero mucho, aunque no te lo diga tanto como debería (pero sí como lo mereces).<br><br>
+      — Con cariño tu mejor amigo y espero ser el unico pendeja.
+    </p>
+
+    <div class="pregunta">
+      ¿Pinky promesa de que viviras siempre? igual no puedes decir que no jajjaja
+    </div>
+
+    <div class="opciones">
+      <button id="btnSi" class="btn-opcion" onclick="responder()">Sí </button>
+      <button id="btnNo" class="btn-opcion" onmouseover="moverNo(this)">No </button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarCarta() {
+      document.getElementById('carta').style.display = 'block';
+    }
+
+    function responder() {
+      alert(" Siempre estare contigo de una forma u otra , con cariño tu rabanito");
+    }
+
+    function moverNo(btn) {
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.position = 'absolute';
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
+</body>
+</html>
